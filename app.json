@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "react-native-q-starter",
+    "name": "tmp201-rn-q-starter",
     "description": "A very interesting project.",
-    "slug": "react-native-q-starter",
-    "privacy": "public",
-    "sdkVersion": "31.0.0",
+    "slug": "tmp201-rn-q-starter",
+    "privacy": "unlisted",
+    "sdkVersion": "32.0.0",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,11 +17,25 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "extra": {
+      "sentryEnable": false,
+      "sentryDSN": "https://df2f6838e03b4b1d8452b82b98633170@sentry.io/1386077"
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "quincy",
+            "project": "rn-ts-sample",
+            "authToken": "0039b938eb3f41f580d7a13b510fe51ee39e9b420eec44e09bf16fd99738d52b"
+          }
+        }
+      ]
     }
   }
 }
