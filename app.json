@@ -23,7 +23,7 @@
     },
     "extra": {
       "sentryEnable": false,
-      "sentryDSN": "https://df2f6838e03b4b1d8452b82b98633170@sentry.io/1386077"
+      "sentryDSN": "https://google.com"
     },
     "hooks": {
       "postPublish": [
@@ -32,7 +32,7 @@
           "config": {
             "organization": "quincy",
             "project": "rn-ts-sample",
-            "authToken": "0039b938eb3f41f580d7a13b510fe51ee39e9b420eec44e09bf16fd99738d52b"
+            "authToken": "asecrettoken"
           }
         }
       ]
