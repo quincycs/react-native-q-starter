@@ -14,7 +14,9 @@ const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
 
-interface IFocused { focused: boolean; }
+interface IFocused {
+  focused: boolean;
+}
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
