@@ -9,7 +9,8 @@
     "test": "npm run tslint && npm run tsc-test && npm run jest",
     "tslint": "tslint --project .",
     "tsc-test": "tsc --project . --noEmit",
-    "jest": "jest"
+    "jest": "jest",
+    "pretty": "yarn prettier --write 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
@@ -37,7 +38,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test",
+      "pre-commit": "yarn pretty && yarn test",
       "pre-push": "yarn test"
     }
   },
