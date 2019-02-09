@@ -17,12 +17,13 @@ An opinionated launch point for an react-native app already built with some very
 - "skipLibCheck": true
   - gets rid of typescript errors showing up inside dependencies.
 
-**Features**
+**Additional Features**
 
-- Prettier
+- prettier (code formatting)
+- husky (code format & test each commit and push)
+- allTypes.d.ts (Common types & missing types)
 - sentry-expo (production error tracking)
   - [app.json (extra)](https://docs.expo.io/versions/latest/workflow/configuration/#extra)
   - app.json (extra.sentryDNS) - https://sentry.io/settings/your-org/projects/your-project/keys/
   - app.json (extra.sentryEnable) - [Sentry.enableInExpoDevelopment](https://docs.expo.io/versions/latest/guides/using-sentry/)
   - app.json [hooks](https://docs.expo.io/versions/latest/guides/using-sentry/) - for sourcemaps
-- allTypes.d.ts (Common types & missing types)
