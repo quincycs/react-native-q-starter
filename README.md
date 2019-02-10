@@ -11,6 +11,7 @@ An opinionated launch point for an react-native app already built with some very
 - [tutorial link](https://medium.com/@dai_shi/creating-a-minimal-expo-react-native-project-with-typescript-and-jest-5979ab8d7c15)
 - tslint / ts-jest / @types
 - removal of babel!
+- no "rn-cli-config.js" or weird babel transforms
 
 **Modifications**
 
