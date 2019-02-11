@@ -4,7 +4,7 @@ An opinionated launch point for an react-native app already built with some very
 
 **Started with expo's tabs new project template.**
 
-- 32SDK / jest / react-navigation / testing utils
+- 32SDK (react-native 0.57) / jest / react-navigation / testing utils
 
 **Added typescript**
 
