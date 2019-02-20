@@ -27,4 +27,4 @@ An opinionated launch point for an react-native app already built with some very
   - [app.json (extra)](https://docs.expo.io/versions/latest/workflow/configuration/#extra)
   - app.json (extra.sentryDNS) - https://sentry.io/settings/your-org/projects/your-project/keys/
   - app.json (extra.sentryEnable) - [Sentry.enableInExpoDevelopment](https://docs.expo.io/versions/latest/guides/using-sentry/)
-  - app.json [hooks](https://docs.expo.io/versions/latest/guides/using-sentry/) - for sourcemaps
+  - [app.json (hooks)](https://docs.expo.io/versions/latest/guides/using-sentry/) - for sourcemaps
