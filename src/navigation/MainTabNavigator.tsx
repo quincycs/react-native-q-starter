@@ -14,13 +14,13 @@ const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
 
-interface IFocused {
+interface Focused {
   focused: boolean;
 }
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
-  tabBarIcon: ({ focused }: IFocused) => (
+  tabBarIcon: ({ focused }: Focused) => (
     <TabBarIcon
       focused={focused}
       name={
@@ -38,7 +38,7 @@ const LinksStack = createStackNavigator({
 
 LinksStack.navigationOptions = {
   tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }: IFocused) => (
+  tabBarIcon: ({ focused }: Focused) => (
     <TabBarIcon
       focused={focused}
       name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
@@ -52,7 +52,7 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }: IFocused) => (
+  tabBarIcon: ({ focused }: Focused) => (
     <TabBarIcon
       focused={focused}
       name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}

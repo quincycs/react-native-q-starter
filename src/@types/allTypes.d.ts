@@ -1,10 +1,12 @@
 declare module 'react-navigation/NavigationTestUtils';
-declare module 'expo';
 declare module '@expo/samples';
+declare module '@expo/vector-icons';
 
 // generics
 type Optional<T> = T | undefined;
-type Dictionary<T> = { [key: string]: T | undefined };
+interface Dictionary<T> {
+  [key: string]: T | undefined;
+}
 
 // built-in types
 // type Readonly<T> = { readonly [P in keyof T]: T[P]; };

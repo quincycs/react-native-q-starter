@@ -1,14 +1,23 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Font, Icon, Constants } from 'expo';
+import { AppLoading, Asset, Font, Constants } from 'expo';
+import { Ionicons } from '@expo/vector-icons';
 import Sentry from 'sentry-expo';
 
 import AppNavigator from './navigation/AppNavigator';
 
-if (Constants.manifest.extra.sentryEnable) {
+const { extra } = Constants.manifest;
+if (extra && extra.sentryEnable) {
   Sentry.enableInExpoDevelopment = true;
-  Sentry.config(Constants.manifest.extra.sentryDSN).install();
+  Sentry.config(extra.sentryDSN).install();
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+});
 
 interface Props {
   skipLoadingScreen?: boolean;
@@ -18,12 +27,44 @@ interface State {
 }
 
 export default class App extends React.Component<Props, State> {
-  state = {
+  public state = {
     isLoadingComplete: false,
   };
 
-  render() {
-    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+  private loadResourcesAsync = async () => {
+    await Promise.all([
+      Asset.loadAsync([
+        require('./assets/images/robot-dev.png'),
+        require('./assets/images/robot-prod.png'),
+      ]),
+      Font.loadAsync({
+        // This is the font that we are using for our tab bar
+        ...Ionicons.font,
+        // We include SpaceMono because we use it in HomeScreen.js. Feel free
+        // to remove this if you are not using it in your app
+        'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+      }),
+    ]);
+  };
+
+  private handleLoadingError = (error: Error) => {
+    Sentry.captureException(error);
+  };
+
+  private handleFinishLoading = () => {
+    this.setState({ isLoadingComplete: true });
+    // Sentry.captureMessage('launch');
+    // try {
+    //   throw new Error('just a test');
+    // } catch (err) {
+    //   Sentry.captureException(err);
+    // }
+  };
+
+  public render() {
+    const { isLoadingComplete } = this.state;
+    const { skipLoadingScreen } = this.props;
+    if (!isLoadingComplete && !skipLoadingScreen) {
       return (
         <AppLoading
           startAsync={this.loadResourcesAsync}
@@ -39,41 +80,4 @@ export default class App extends React.Component<Props, State> {
       </View>
     );
   }
-
-  loadResourcesAsync = async () => {
-    return Promise.all([
-      Asset.loadAsync([
-        require('./assets/images/robot-dev.png'),
-        require('./assets/images/robot-prod.png'),
-      ]),
-      Font.loadAsync({
-        // This is the font that we are using for our tab bar
-        ...Icon.Ionicons.font,
-        // We include SpaceMono because we use it in HomeScreen.js. Feel free
-        // to remove this if you are not using it in your app
-        'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
-      }),
-    ]);
-  };
-
-  handleLoadingError = (error: Error) => {
-    Sentry.captureException(error);
-  };
-
-  handleFinishLoading = () => {
-    this.setState({ isLoadingComplete: true });
-    // Sentry.captureMessage('launch');
-    // try {
-    //   throw new Error('just a test');
-    // } catch (err) {
-    //   Sentry.captureException(err);
-    // }
-  };
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});

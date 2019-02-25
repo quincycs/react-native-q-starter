@@ -1,5 +1,6 @@
 import React from 'react';
-import { Icon } from 'expo';
+import { StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '../constants/Colors';
 
@@ -8,17 +9,18 @@ interface Props {
   focused: boolean;
 }
 
-export default class TabBarIcon extends React.Component<Props> {
-  render() {
-    return (
-      <Icon.Ionicons
-        name={this.props.name}
-        size={26}
-        style={{ marginBottom: -3 }}
-        color={
-          this.props.focused ? Colors.tabIconSelected : Colors.tabIconDefault
-        }
-      />
-    );
-  }
-}
+const styles = StyleSheet.create({
+  margin: { marginBottom: -3 },
+});
+
+export default (props: Props) => {
+  const { name, focused } = props;
+  return (
+    <Ionicons
+      name={name}
+      size={26}
+      style={styles.margin}
+      color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+    />
+  );
+};
