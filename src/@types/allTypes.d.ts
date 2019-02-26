@@ -1,6 +1,7 @@
 declare module 'react-navigation/NavigationTestUtils';
 declare module '@expo/samples';
 declare module '@expo/vector-icons';
+declare module 'sentry-expo';
 
 // generics
 type Optional<T> = T | undefined;
