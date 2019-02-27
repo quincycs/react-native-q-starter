@@ -17,15 +17,39 @@ An opinionated launch point for an react-native app already built with some very
 - prettier (code formatting)
 - husky (code format & test each commit and push)
 - allTypes.d.ts (Common types & missing types)
-- VS code integration once these extensions are installed
-  - ESLint [install](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-  - Prettier [install](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-  - React Native Tools [install](https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native)
 - sentry-expo (production error tracking)
   - [app.json (extra)](https://docs.expo.io/versions/latest/workflow/configuration/#extra)
   - app.json (extra.sentryDNS) - https://sentry.io/settings/your-org/projects/your-project/keys/
   - app.json (extra.sentryEnable) - [Sentry.enableInExpoDevelopment](https://docs.expo.io/versions/latest/guides/using-sentry/)
   - [app.json (hooks)](https://docs.expo.io/versions/latest/guides/using-sentry/) - for sourcemaps
+
+## Setup from fresh OS
+
+- Install Node8 and Yarn
+  - Mac
+    - Homebrew [install](https://brew.sh/)
+    - `brew install node@8` then `brew link node@8`
+    - `brew install yarn --without-node` [more info](https://formulae.brew.sh/formula/yarn)
+  - Windows
+    - Node [install](https://nodejs.org/dist/latest-v8.x/). I'd try the "-x64.msi" one.
+    - Yarn [install](https://yarnpkg.com/lang/en/docs/install/#windows-stable).
+  - Verify node version: `node -v` says version 8.
+- Download this github repo as a .zip
+- Rename various placeholder names for your project.
+  - Package.json - "name"
+  - app.json - "name" / "slug".
+  - Oh and the 'react-native-q-starter' folder ;)
+- `yarn install`
+- `yarn start`
+
+## Recommended IDE & Extensions
+
+- VS code [install](https://code.visualstudio.com/)
+- VS code integration should just work after installing these extensions:
+  - ESLint [install](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  - Prettier [install](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  - React Native Tools [install](https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native)
+  - Visual Studio IntelliCode [install](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 
 **ESLINT**
 
@@ -97,3 +121,9 @@ Look at [react-native's package.json](https://github.com/facebook/react-native/b
 **Plan for keeping eslintrc up to date:**
 
 Consider keeping "plugins", "rules", "globals" in sync with [react-native's eslintrc](https://github.com/facebook/react-native/blob/master/.eslintrc). Keep personal / project preferences intact at the top of "rules". Don't use any flow plugins or flow related rules. VScode should complain about any duplicate rules.
+
+**Plan for keeping tsconfig up to date:**
+
+Inside allTypes.d.ts, re-evaluate any `declare module "XXX";`. Overtime these modules might exist in the dependency already or via DefinitelyTyped via npm `@types/XXX`.
+
+Inside tsconfig.json, "types" should be any "@types/" we have inside our package.json. This is how we resolve conflicting types. Try removing "types" which will cause tsc include all types, and you'll see the errors that are being avoided.
