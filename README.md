@@ -8,9 +8,11 @@ An opinionated launch point for an react-native app already built with some very
 
 **Added typescript**
 
-- eslint / ts-jest / @types
+- ts-jest / @types
+- eslint
+  - rules based from react-native repo itself. [link](https://github.com/facebook/react-native/blob/master/.eslintrc)
 - minimal babel 7
-- no "rn-cli-config.js" or weird babel transforms
+  - no "rn-cli-config.js" or weird babel transforms
 
 **Additional Features**
 
@@ -51,11 +53,7 @@ An opinionated launch point for an react-native app already built with some very
   - React Native Tools [install](https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native)
   - Visual Studio IntelliCode [install](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 
-**ESLINT**
-
-- rules based from react-native repo itself. [link](https://github.com/facebook/react-native/blob/master/.eslintrc)
-
-# Process for keeping up to date
+## Process for keeping up to date
 
 Update schedule: ~1 month after new expo SDK release. This gives the SDK some time to soak.
 
