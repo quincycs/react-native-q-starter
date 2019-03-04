@@ -24,7 +24,7 @@ export default class LoginScreen extends React.Component<Props> {
 
   public componentDidMount() {
     /*
-     * in order to reset app into normal/ state,
+     * in order to reset app into freshly installed state,
      * delete any local storage of user and app.
      */
   }
