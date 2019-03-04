@@ -22,6 +22,13 @@ export default class LoginScreen extends React.Component<Props> {
     this.props.navigation.navigate('Main');
   };
 
+  public componentDidMount() {
+    /*
+     * in order to reset app into normal/ state,
+     * delete any local storage of user and app.
+     */
+  }
+
   public render() {
     return (
       <View style={styles.container}>

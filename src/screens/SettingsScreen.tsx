@@ -1,14 +1,32 @@
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import { StyleSheet, View, Button } from 'react-native';
+import { NavigationScreenProps } from 'react-navigation';
 
-export default class SettingsScreen extends React.Component {
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingTop: 15,
+    backgroundColor: '#fff',
+  },
+});
+
+type Props = NavigationScreenProps;
+
+export default class SettingsScreen extends React.Component<Props> {
   protected static navigationOptions = {
     title: 'app.json',
   };
 
+  private onSignOutPress = () => {
+    this.props.navigation.navigate('Auth');
+  };
+
   public render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
-    return <ExpoConfigView />;
+    return (
+      <View style={styles.container}>
+        <Button title='Sign out' onPress={this.onSignOutPress} />
+      </View>
+    );
   }
 }
