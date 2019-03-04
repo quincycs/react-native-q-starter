@@ -4,7 +4,8 @@ import { AppLoading, Asset, Font, Constants } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import Sentry from 'sentry-expo';
 
-import AppNavigator from './navigation/AppNavigator';
+import { createAppContainerWithRoute } from './navigation/AppNavigator';
+import AppStorage from './utils/AppStorage';
 
 const { extra } = Constants.manifest;
 if (extra && extra.sentryEnable) {
@@ -44,6 +45,7 @@ export default class App extends React.Component<Props, State> {
         // to remove this if you are not using it in your app
         'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
       }),
+      AppStorage.loadAsync(),
     ]);
   };
 
@@ -73,6 +75,8 @@ export default class App extends React.Component<Props, State> {
         />
       );
     }
+    const route = AppStorage.getIsLoggedIn() ? 'Main' : 'Auth';
+    const AppNavigator = createAppContainerWithRoute(route);
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
