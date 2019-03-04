@@ -23,6 +23,13 @@ class AppStorage {
     ]);
   }
 
+  public async clearAsync() {
+    await Promise.all([
+      this.unsafeCache.clearAsync(),
+      this.securedCache.clearAsync(),
+    ]);
+  }
+
   public getIsLoggedIn(): boolean {
     return this.getAuthToken() !== null;
   }

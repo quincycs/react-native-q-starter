@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
+import AppStorage from '../utils/AppStorage';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,15 +19,21 @@ export default class LoginScreen extends React.Component<Props> {
     header: null,
   };
 
-  private onLoginPress = () => {
+  private onLoginPress = async () => {
+    AppStorage.setAuthToken({
+      idToken: '',
+      refreshToken: '',
+    });
+    await AppStorage.saveAsync();
     this.props.navigation.navigate('Main');
   };
 
-  public componentDidMount() {
+  public async componentDidMount() {
     /*
      * in order to reset app into freshly installed state,
      * delete any local storage of user and app.
      */
+    await AppStorage.clearAsync();
   }
 
   public render() {
