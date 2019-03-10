@@ -1,4 +1,5 @@
 import CacheStorage from './CacheStorage';
+import { AuthToken } from '../web/firebase';
 
 class AppStorage {
   private unsafeCache: CacheStorage;

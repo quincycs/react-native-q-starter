@@ -4,15 +4,16 @@
   "private": true,
   "scripts": {
     "start": "expo start",
-    "test": "npm run eslint && npm run tsc-test && npm run jest",
+    "test": "npm run eslint && npm run tsc && npm run jest",
     "eslint": "eslint --ext .ts,.tsx .",
-    "tsc-test": "tsc --project . --noEmit",
+    "tsc": "tsc --project . --noEmit",
     "jest": "node_modules/.bin/jest",
     "pretty": "yarn prettier --write 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
     "@expo/vector-icons": "^9.0.0",
+    "axios": "^0.18.0",
     "expo": "^32.0.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",

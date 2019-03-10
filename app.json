@@ -23,7 +23,8 @@
     },
     "extra": {
       "sentryEnable": false,
-      "sentryDSN": "https://google.com"
+      "sentryDSN": "https://google.com",
+      "fireAuthApiKey": "FIREAUTHKEY"
     },
     "hooks": {
       "postPublish": [
