@@ -24,7 +24,9 @@
     "extra": {
       "sentryEnable": false,
       "sentryDSN": "https://google.com",
-      "fireAuthApiKey": "FIREAUTHKEY"
+      "fireAuthApiKey": "FIREAUTHKEY",
+      "testUsername": "user@email.com",
+      "testPassword": "password"
     },
     "hooks": {
       "postPublish": [

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
+import { Constants } from 'expo';
 import { NavigationScreenProps } from 'react-navigation';
 import AppStorage from '../utils/AppStorage';
 import { signInApi } from '../web/fireAuth';
@@ -22,8 +23,10 @@ export default class LoginScreen extends React.Component<Props> {
   };
 
   private onLoginPress = async () => {
-    const username = 'email@email.com';
-    const password = 'password';
+    const username =
+      Constants.manifest.extra && Constants.manifest.extra.testUsername;
+    const password =
+      Constants.manifest.extra && Constants.manifest.extra.testPassword;
 
     /*
      *  DEMO OF BASIC USAGE
