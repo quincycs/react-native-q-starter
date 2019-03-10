@@ -24,6 +24,11 @@ An opinionated launch point for an react-native app already built with some very
   - app.json (extra.sentryDNS) - https://sentry.io/settings/your-org/projects/your-project/keys/
   - app.json (extra.sentryEnable) - [Sentry.enableInExpoDevelopment](https://docs.expo.io/versions/latest/guides/using-sentry/)
   - [app.json (hooks)](https://docs.expo.io/versions/latest/guides/using-sentry/) - for sourcemaps
+- Logged out / Signed in screens with Auth nav flow and sign out functionality.
+- Secure device storage. (e.g. of auth token & logged in state)
+- Localization / Pattern for supporting multiple languages.
+- Firebase REST API integration. (Authentication)
+- Reusable Web API pattern. Cancellation support. Error handling / User friendly messages pattern.
 
 ## Setup from fresh OS
 
