@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
 import AppStorage from '../utils/AppStorage';
+import { signInApi } from '../web/fireAuth';
+import { ApiFetchCancellation } from '../web/apiFetch';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,12 +22,41 @@ export default class LoginScreen extends React.Component<Props> {
   };
 
   private onLoginPress = async () => {
-    AppStorage.setAuthToken({
-      idToken: '',
-      refreshToken: '',
-    });
-    await AppStorage.saveAsync();
-    this.props.navigation.navigate('Main');
+    const username = 'email@email.com';
+    const password = 'password';
+
+    /*
+     *  DEMO OF BASIC USAGE
+     */
+    // const result = await signInApi(username, password);
+    // console.log('LoginScreen API result:' + JSON.stringify(result));
+    // if (result.model) {
+    //   AppStorage.setAuthToken(result.model);
+    //   await AppStorage.saveAsync();
+    //   this.props.navigation.navigate('Main');
+    // }
+    // if (result.error) {
+    //   console.log('User Friendly Error DEMO :: ' + result.error.message);
+    // }
+
+    /*
+     *  DEMO OF CANCELLATION
+     */
+    const cancelHandle = new ApiFetchCancellation();
+    const resultPromise = signInApi(username, password, cancelHandle);
+    setTimeout(() => {
+      cancelHandle.cancel();
+    }, 100); // change this timing shorter or longer to see how the response changes.
+    const result = await resultPromise;
+    console.log('LoginScreen API result:' + JSON.stringify(result));
+    if (result.model) {
+      AppStorage.setAuthToken(result.model);
+      await AppStorage.saveAsync();
+      this.props.navigation.navigate('Main');
+    }
+    if (result.error && result.error.code === 'CANCEL') {
+      console.log('screen knows it was cancelled!');
+    }
   };
 
   public async componentDidMount() {
