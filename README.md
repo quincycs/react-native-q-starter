@@ -85,6 +85,7 @@ Look at [react-native's package.json](https://github.com/facebook/react-native/b
 "dependencies": {
    "@expo/samples": NEW-TABS
    "@expo/vector-icons": NEW-TABS
+   "axios": LATEST
    "expo": NEW-TABS
    "react": NEW-TABS
    "react-native": NEW-TABS
