@@ -4,10 +4,10 @@ exports[`renders correctly 1`] = `
 <Text
   style={
     Array [
-      undefined,
       Object {
         "fontFamily": "space-mono",
       },
+      undefined,
     ]
   }
 >

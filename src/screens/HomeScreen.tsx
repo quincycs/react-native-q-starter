@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
-import { MonoText } from '../components/StyledText';
+import { MonoText, NormalText } from '../components/StyledText';
 
 const styles = StyleSheet.create({
   container: {
@@ -150,9 +150,9 @@ export default class HomeScreen extends React.Component {
               </MonoText>
             </View>
 
-            <Text style={styles.getStartedText}>
+            <NormalText style={styles.getStartedText}>
               Change this text and your app will automatically reload.
-            </Text>
+            </NormalText>
           </View>
 
           <View style={styles.helpContainer}>
