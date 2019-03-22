@@ -81,10 +81,6 @@ const styles = StyleSheet.create({
 });
 
 export default class HomeScreen extends React.Component {
-  protected static navigationOptions = {
-    title: 'Home',
-  };
-
   private handleLearnMorePress = () => {
     WebBrowser.openBrowserAsync(
       'https://docs.expo.io/versions/latest/guides/development-mode'

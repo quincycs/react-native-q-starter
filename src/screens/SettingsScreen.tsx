@@ -14,17 +14,18 @@ const styles = StyleSheet.create({
 type Props = NavigationScreenProps;
 
 export default class SettingsScreen extends React.Component<Props> {
-  protected static navigationOptions = {
-    title: 'app.json',
-  };
-
   private onSignOutPress = () => {
     this.props.navigation.navigate('Auth');
+  };
+
+  private onNavPress = () => {
+    this.props.navigation.navigate('Deep');
   };
 
   public render() {
     return (
       <View style={styles.container}>
+        <Button title='Open deeper screen' onPress={this.onNavPress} />
         <Button title='Sign out' onPress={this.onSignOutPress} />
       </View>
     );
