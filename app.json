@@ -21,6 +21,7 @@
     "ios": {
       "supportsTablet": true
     },
+    "scheme": "rnqstart",
     "extra": {
       "sentryEnable": false,
       "sentryDSN": "https://google.com",

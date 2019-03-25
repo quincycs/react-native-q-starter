@@ -6,6 +6,7 @@ import Sentry from 'sentry-expo';
 
 import { createAppContainerWithRoute } from './navigation/AppNavigator';
 import AppStorage from './utils/AppStorage';
+import { getLinkingInitialUrl } from './utils/LinkingUrl';
 
 const { extra } = Constants.manifest;
 if (extra && extra.sentryEnable) {
@@ -46,6 +47,7 @@ export default class App extends React.Component<Props, State> {
         'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
       }),
       AppStorage.loadAsync(),
+      getLinkingInitialUrl(),
     ]);
   };
 

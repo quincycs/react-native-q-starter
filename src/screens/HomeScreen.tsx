@@ -6,10 +6,14 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Linking,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import { NavigationScreenProps } from 'react-navigation';
 
 import { MonoText, NormalText } from '../components/StyledText';
+import { getLinkingInitialUrlMemo } from '../utils/LinkingUrl';
+import parseUrl, { URLParsed } from '../utils/parseUrl';
 
 const styles = StyleSheet.create({
   container: {
@@ -80,7 +84,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class HomeScreen extends React.Component {
+type Props = NavigationScreenProps;
+
+export default class HomeScreen extends React.Component<Props> {
   private handleLearnMorePress = () => {
     WebBrowser.openBrowserAsync(
       'https://docs.expo.io/versions/latest/guides/development-mode'
@@ -113,6 +119,31 @@ export default class HomeScreen extends React.Component {
         You are not in development mode, your app will run at full speed.
       </Text>
     );
+  }
+
+  private handleOpenURL = (event: { url: string }) => {
+    const result = parseUrl(event.url);
+    this.navWithURLParsed(result);
+  };
+
+  private navWithURLParsed(url: URLParsed) {
+    this.props.navigation.navigate({
+      routeName: url.pathname,
+      params: url.args,
+    });
+  }
+
+  // test deeplinking via: xcrun simctl openurl booted "exp://127.0.0.1:19004/--/Deep?a=123&b=hello%20world"
+  public componentDidMount() {
+    const linkingObj = getLinkingInitialUrlMemo();
+    if (linkingObj) {
+      this.navWithURLParsed(linkingObj);
+    }
+    Linking.addEventListener('url', this.handleOpenURL);
+  }
+
+  public componentWillUnmount() {
+    Linking.removeEventListener('url', this.handleOpenURL);
   }
 
   public render() {
