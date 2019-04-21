@@ -5,21 +5,31 @@
     "slug": "tmp201-rn-q-starter",
     "privacy": "unlisted",
     "sdkVersion": "32.0.0",
-    "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+    "assetBundlePatterns": ["**/*"],
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#004B42"
+    },
+    "primaryColor": "#004B42",
+    "platforms": ["ios", "android"],
     "ios": {
-      "supportsTablet": true
+      "buildNumber": "1.0.0",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.yourproduct",
+      "icon": "./assets/images/icon-ios.png",
+      "infoPlist": {}
+    },
+    "android": {
+      "versionCode": 1,
+      "package": "com.yourcompany.yourproduct",
+      "icon": "./assets/images/icon-android.png",
+      "permissions": []
     },
     "scheme": "rnqstart",
     "extra": {
