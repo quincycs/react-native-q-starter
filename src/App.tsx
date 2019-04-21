@@ -57,7 +57,9 @@ export default class App extends React.Component<Props, State> {
 
   private handleFinishLoading = () => {
     this.setState({ isLoadingComplete: true });
-    // Sentry.captureMessage('launch');
+    // You could use sentry to record app launches
+    // Sentry.captureMessage('launch', { level: 'info' });
+
     // try {
     //   throw new Error('just a test');
     // } catch (err) {
@@ -81,7 +83,7 @@ export default class App extends React.Component<Props, State> {
     const AppNavigator = createAppContainerWithRoute(route);
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
+        {Platform.OS === 'ios' && <StatusBar barStyle='light-content' />}
         <AppNavigator />
       </View>
     );
