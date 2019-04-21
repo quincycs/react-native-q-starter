@@ -29,6 +29,7 @@ An opinionated launch point for an react-native app already built with some very
 - Localization / Pattern for supporting multiple languages.
 - Firebase REST API integration. (Authentication)
 - Reusable Web API pattern. Cancellation support. Error handling / User friendly messages pattern.
+- Screen Deeplinking (see HomeScreen's componentDidMount)
 
 ## Setup from fresh OS
 
@@ -96,7 +97,6 @@ Look at [react-native's package.json](https://github.com/facebook/react-native/b
    "@types/react-test-renderer": TYPES
    "@types/jest": TYPES
    "@types/react": TYPES
-   "@types/react-navigation": TYPES
    "@types/expo": TYPES
 
    "@typescript-eslint/eslint-plugin": LATEST
