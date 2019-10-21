@@ -1,6 +1,9 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Font, Constants } from 'expo';
+import { AppLoading } from 'expo';
+import Constants from 'expo-constants';
+import * as Font from 'expo-font';
+import { Asset } from 'expo-asset';
 import { Ionicons } from '@expo/vector-icons';
 import Sentry from 'sentry-expo';
 

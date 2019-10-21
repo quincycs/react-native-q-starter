@@ -8,7 +8,7 @@ import {
   View,
   Linking,
 } from 'react-native';
-import { WebBrowser } from 'expo';
+import * as WebBrowser from 'expo-web-browser';
 import { NavigationScreenProps } from 'react-navigation';
 
 import { MonoText, NormalText } from '../components/StyledText';

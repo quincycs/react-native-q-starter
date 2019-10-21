@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
-import { Constants } from 'expo';
+import Constants from 'expo-constants';
 import { NavigationScreenProps } from 'react-navigation';
 import AppStorage from '../utils/AppStorage';
 import { signInApi } from '../web/fireAuth';

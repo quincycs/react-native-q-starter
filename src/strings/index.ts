@@ -1,4 +1,4 @@
-import { Localization } from 'expo';
+import * as Localization from 'expo-localization';
 
 import en from './en';
 

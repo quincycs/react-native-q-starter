@@ -1,5 +1,5 @@
 import { AsyncStorage } from 'react-native';
-import { SecureStore } from 'expo';
+import * as SecureStore from 'expo-secure-store';
 
 /**
  * Async storage which loads into memory for fast subsequent reads.
