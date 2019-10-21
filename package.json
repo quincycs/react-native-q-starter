@@ -14,10 +14,10 @@
     "@expo/samples": "2.1.1",
     "@expo/vector-icons": "^9.0.0",
     "axios": "^0.18.0",
-    "expo": "^33.0.0",
+    "expo": "^34.0.3",
     "react": "16.8.3",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
-    "react-navigation": "^3.11.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+    "react-navigation": "^3.11.1",
     "sentry-expo": "~1.13.0"
   },
   "devDependencies": {
@@ -31,7 +31,7 @@
     "typescript": "^3.3.1",
     "ts-jest": "^23.10.5",
     "expo-cli": "latest",
-    "jest-expo": "^33.0.0",
+    "jest-expo": "^34.0.0",
     "react-test-renderer": "^16.3.1",
     "babel-preset-expo": "^5.0.0",
     "jest": "^23.4.0",

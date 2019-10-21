@@ -4,7 +4,7 @@
     "description": "A very interesting project.",
     "slug": "tmp201-rn-q-starter",
     "privacy": "unlisted",
-    "sdkVersion": "33.0.0",
+    "sdkVersion": "34.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
     "assetBundlePatterns": ["**/*"],
