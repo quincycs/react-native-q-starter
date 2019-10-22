@@ -15,6 +15,7 @@
       "react-navigation",
       "react-test-renderer"
     ],
+    "skipLibCheck": true,
     /* begin rules */
     "strict": true,
     "allowSyntheticDefaultImports": true /* allow `import React from 'react'` */,

@@ -4,7 +4,7 @@ An opinionated launch point for an react-native app already built with some very
 
 **Started with expo's tabs new project template.**
 
-- 32SDK (react-native 0.57) / jest / react-navigation / testing utils
+- 35SDK (react-native 0.59) / jest / react-navigation / testing utils
 
 **Added typescript**
 
@@ -66,9 +66,9 @@ Update schedule: ~1 month after new expo SDK release. This gives the SDK some ti
 **Below is my plan on updating package.json**
 
 NEW-TABS:
-Create a temporary new project via: `expo -init`.
+Create a temporary new project via: `expo init`.
 Generate the tabs project.
-Look at the package.json for dependency versions.
+Look at the package.json / node_modules for dependency versions.
 
 TYPES:
 Align @types/XYZ with the closest version of XYZ. (Sometimes you won’t get full alignment. In that case choose a version lower.)
@@ -100,6 +100,7 @@ Look at [react-native's package.json](https://github.com/facebook/react-native/b
    "@types/expo": TYPES
 
    "@typescript-eslint/eslint-plugin": LATEST
+   "@typescript-eslint/parser": LATEST
    "husky": LATEST
    "prettier": LATEST
 

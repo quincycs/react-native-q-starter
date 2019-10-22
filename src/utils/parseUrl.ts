@@ -4,7 +4,7 @@ export interface URLParsed {
 }
 
 export default function parseUrl(url: string): URLParsed {
-  let urlSplit = url.split('?');
+  const urlSplit = url.split('?');
   const pathPart = urlSplit[0];
   const pathNameSplit = pathPart.split('/');
   const obj: URLParsed = {
