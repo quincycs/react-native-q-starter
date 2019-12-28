@@ -35,11 +35,11 @@ An opinionated launch point for an react-native app already built with some very
 
 - Install Node8 and Yarn
   - Mac
-    - Homebrew [install](https://brew.sh/)
-    - `brew install node@8` then `brew link node@8`
+    - Install node via [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md)
+    - `nvm install 10.17.0` (where the version is latest 10.x) [latest](https://nodejs.org/download/release/latest-v10.x/)
     - `brew install yarn --without-node` [more info](https://formulae.brew.sh/formula/yarn)
   - Windows
-    - Node [install](https://nodejs.org/dist/latest-v8.x/). I'd try the "-x64.msi" one.
+    - Node [install](https://nodejs.org/download/release/latest-v10.x/). I'd try the "-x64.msi" one.
     - Yarn [install](https://yarnpkg.com/lang/en/docs/install/#windows-stable).
   - Verify node version: `node -v` says version 8.
 - Download this github repo as a .zip
