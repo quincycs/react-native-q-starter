@@ -4,7 +4,7 @@ An opinionated launch point for an react-native app already built with some very
 
 **Started with expo's tabs new project template.**
 
-- 35SDK (react-native 0.59) / jest / react-navigation / testing utils
+- 36SDK (react-native 0.61 & react 16.9) / jest / react-navigation / testing utils
 
 **Added typescript**
 
@@ -97,7 +97,7 @@ Look at [react-native's package.json](https://github.com/facebook/react-native/b
    "@types/react-test-renderer": TYPES
    "@types/jest": TYPES
    "@types/react": TYPES
-   "@types/expo": TYPES
+   "@types/react-native": TYPES
 
    "@typescript-eslint/eslint-plugin": LATEST
    "@typescript-eslint/parser": LATEST
@@ -106,10 +106,10 @@ Look at [react-native's package.json](https://github.com/facebook/react-native/b
 
    "typescript": LATEST
    "ts-jest": ALIGN-JEST-TS
+   "react-test-renderer": ALIGN-REACT
 
    "expo-cli": LATEST
    "jest-expo": NEW-TABS
-   "react-test-renderer": NEW-TABS
    "babel-preset-expo": NEW-TABS
    "jest": NEW-TABS
 
@@ -132,3 +132,12 @@ Consider keeping "plugins", "rules", "globals" in sync with [react-native's esli
 Inside allTypes.d.ts, re-evaluate any `declare module "XXX";`. Overtime these modules might exist in the dependency already or via DefinitelyTyped via npm `@types/XXX`.
 
 Inside tsconfig.json, "types" should be any "@types/" we have inside our package.json. This is how we resolve conflicting types. Try removing "types" which will cause tsc include all types, and you'll see the errors that are being avoided.
+
+**SDK 36 Update Notes**
+
+I tried updating the following, but tests failed after any of them were updated. More time is needed to figure out these upgrades.
+
+- sentry-expo (2.0.1)
+- @types/react-native (0.61.23)
+
+I also tried updating react-navigation (a major version increase). However, more time is needed to figure out the migration & fixing the type issues that came up. Specifically how to fix the type error for AppNavigator.ts for `Deep: { screen: DeepScreen },`.
