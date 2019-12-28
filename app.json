@@ -4,10 +4,12 @@
     "description": "A very interesting project.",
     "slug": "tmp201-rn-q-starter",
     "privacy": "unlisted",
-    "sdkVersion": "35.0.0",
+    "sdkVersion": "36.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -17,7 +19,10 @@
       "backgroundColor": "#004B42"
     },
     "primaryColor": "#004B42",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "ios": {
       "buildNumber": "1.0.0",
       "supportsTablet": true,
