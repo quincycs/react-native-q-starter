@@ -88,7 +88,7 @@ export async function fireFetch<T>(
     : null;
   return {
     model,
-    error: error,
+    error,
   };
 }
 
