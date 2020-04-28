@@ -4,7 +4,7 @@ An opinionated launch point for an react-native app already built with some very
 
 **Started with expo's tabs new project template.**
 
-- 36SDK (react-native 0.61 & react 16.9) / jest / react-navigation / testing utils
+- 37SDK (react-native 0.61 & react 16.9) / jest / react-navigation / testing utils
 
 **Added typescript**
 
@@ -111,7 +111,6 @@ Look at [react-native's package.json](https://github.com/facebook/react-native/b
    "expo-cli": LATEST
    "jest-expo": NEW-TABS
    "babel-preset-expo": NEW-TABS
-   "jest": NEW-TABS
 
    "eslint": RN
    "eslint-plugin-eslint-comments": RN
@@ -133,11 +132,10 @@ Inside allTypes.d.ts, re-evaluate any `declare module "XXX";`. Overtime these mo
 
 Inside tsconfig.json, "types" should be any "@types/" we have inside our package.json. This is how we resolve conflicting types. Try removing "types" which will cause tsc include all types, and you'll see the errors that are being avoided.
 
-**SDK 36 Update Notes**
+**SDK Update Notes**
 
-I tried updating the following, but tests failed after any of them were updated. More time is needed to figure out these upgrades.
+I tried updating the following around SDK 36, but tests failed after any of them were updated. More time is needed to figure out these upgrades.
 
 - sentry-expo (2.0.1)
-- @types/react-native (0.61.23)
 
 I also tried updating react-navigation (a major version increase). However, more time is needed to figure out the migration & fixing the type issues that came up. Specifically how to fix the type error for AppNavigator.ts for `Deep: { screen: DeepScreen },`.

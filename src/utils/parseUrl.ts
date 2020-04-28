@@ -17,7 +17,7 @@ export default function parseUrl(url: string): URLParsed {
     const queryStr = queryPart.split('#')[0];
     const params = queryStr.split('&');
     const argsObj: Record<string, string> = obj.args;
-    params.forEach(paramPairStr => {
+    params.forEach((paramPairStr) => {
       if (paramPairStr) {
         const paramPair = paramPairStr.split('=');
         const argName = paramPair[0];

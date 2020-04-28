@@ -87,8 +87,9 @@ async function apiFetch<T, E>(
     if (error.response) {
       const response: AxiosResponse = error.response;
       console.log(
-        `apiFetch ERR:${url} ${response.status} ${response.data &&
-          JSON.stringify(response.data)}`
+        `apiFetch ERR:${url} ${response.status} ${
+          response.data && JSON.stringify(response.data)
+        }`
       );
     }
     return {

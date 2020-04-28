@@ -4,7 +4,6 @@
     "description": "A very interesting project.",
     "slug": "tmp201-rn-q-starter",
     "privacy": "unlisted",
-    "sdkVersion": "36.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
     "assetBundlePatterns": ["**/*"],
@@ -13,7 +12,7 @@
     },
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "cover",
       "backgroundColor": "#004B42"
     },
