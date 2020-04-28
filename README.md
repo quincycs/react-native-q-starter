@@ -33,7 +33,7 @@ An opinionated launch point for an react-native app already built with some very
 
 ## Setup from fresh OS
 
-- Install Node8 and Yarn
+- Install Node10 and Yarn
   - Mac
     - Install node via [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md)
     - `nvm install 10.17.0` (where the version is latest 10.x) [latest](https://nodejs.org/download/release/latest-v10.x/)
@@ -41,7 +41,7 @@ An opinionated launch point for an react-native app already built with some very
   - Windows
     - Node [install](https://nodejs.org/download/release/latest-v10.x/). I'd try the "-x64.msi" one.
     - Yarn [install](https://yarnpkg.com/lang/en/docs/install/#windows-stable).
-  - Verify node version: `node -v` says version 8.
+  - Verify node version: `node -v` says version 10.
 - Download this github repo as a .zip
 - Rename various placeholder names for your project.
   - Package.json - "name"
